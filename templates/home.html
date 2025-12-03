@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Prince Academy{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <h1>Empower Yourself<br>with Tech Skills</h1>
+    <p>Prince Academy helps you learn tech skils which will help you build the career you want.</p>
+    <a href="#courses" class="btn-primary">Explore Programs</a>
+</div>
+
+<div class="container" id="courses">
+    <h2>Our Programs</h2>
+    <div class="courses-grid">
+        {% for course in courses %}
+        <div class="course-card">
+            <h3>{{ course.title }}</h3>
+            <p>{{ course.description }}</p>
+            <div class="course-meta">
+                <span>Duration: {{ course.duration }}</span> |
+                <span>Level: {{ course.level }}</span>
+            </div>
+            <div class="price">₦{{ course.price }}</div>
+            <button class="btn-enroll">Enroll Now</button>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
